@@ -36,7 +36,7 @@ const deleteProviders = async (req, res) => {
 //put method
 const putProviders = async (req, res) => {
   try {
-    const updateProvider = await Provider.findOneAndUpdate(req.body.email,{
+    const updateProvider = await Provider.findOneAndUpdate(req.body.updateBy,{
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       middleName: req.body.middleName,
