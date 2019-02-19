@@ -41,9 +41,24 @@ $ npm start
 ```
 ### Notes
 The server is running in the port 7000 
-## Endpoints
+### Endpoints
+Open postman to use the API endpoint: `localhost:7000/providers/` to use the next methods:
 
-Open postman to use the API endpoints
+#### Get 
+In postman, we select the method `GET` in the select, and click on the `Send` button like the next image: 
+![get](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/GET-METHOD.png)
+And the response will be an array of objects  with all the collection data, that in this case is `providers`: 
+![get-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/GET-RESPONSE.png)
+
+#### Post 
+In postman, we select the method `POST` in the select, click on `Body` option in the menu  and select the `raw` in the under menu, with the format `JSON`, and  click on the `Send` button  with an JSON object like the next image:
+![post](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/POST-METHOD.png)
+
+#### Update 
+![put](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/PUT-METHOD.png)
+
+#### Delete 
+![delete](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/DELETE-METHOD.png)
 
 
 License
