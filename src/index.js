@@ -12,3 +12,5 @@ app.use('/specialties', specialties);
 app.use('/providers', providers);
 
 app.listen(port, () => console.log(`Morty app listening on port ${port}!`));
+//for testing 
+module.export = app

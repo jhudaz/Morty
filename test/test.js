@@ -59,8 +59,8 @@ describe('Update a row in the db by a field(email)', () => {
   });
 });
 //Testing DELETE endpoint
-describe('Delete a row in the db', () => {
-  it('should return the object that was deleted in the db by a field(email)', (done) => {
+describe('Delete a row in the db by a field(email)', () => {
+  it('should return the object that was deleted in the db ', (done) => {
     let deleteProvider = {
       deleteBy: {
         email: "jandres.vr@hotmail.com"
