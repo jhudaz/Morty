@@ -11,8 +11,12 @@ API REST with a CRUD for a mongodb collection
 * [Express](http://expressjs.com/) web framework for Node.js.
 * [Dotenv](https://www.npmjs.com/package/dotenv) Dotenv is a zero-dependency module that loads environment variables from a .env file.
 * [Body-parser](https://www.npmjs.com/package/body-parser) Node.js body parsing middleware.
+* [Nodemon](https://www.npmjs.com/package/nodemon) Tool that helps develop node.js based applications by automatically restarting the node application when file changes.
 * [Mongoose](https://www.npmjs.com/package/mongoose) Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
 * [Postman](https://www.getpostman.com/) API Development Environment.
+* [Mocha](https://mochajs.org/) JavaScript test framework running on Node.js.
+* [Chai](https://www.chaijs.com/) Assertion library for node and the browser.
+* [Chai HTTP](https://www.npmjs.com/package/chai-http) HTTP integration testing with Chai assertions.
 
 
 ###  Download
@@ -75,6 +79,13 @@ Like  in the update  example  we can delete by any field specified  in `deleteBy
 ![delete](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/DELETE-METHOD.png)
 the response will be the data  that was deleted
 ![delete-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/DELETE-RESPONSE.png)
+
+### Test
+
+To run the test you have to stop the server, and then use the next command
+```sh
+$ npm test
+```
 
 
 License

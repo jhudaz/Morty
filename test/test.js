@@ -1,27 +1,78 @@
-const user = require('../api/users');
-const todo = require('../api/todos');
+const server = require('../src/index');
 const chai = require('chai');
 const should = chai.should();
 const chaiHttp = require('chai-http');
-const models = require('../models');
 
 chai.use(chaiHttp);
 
-const name = 'lorem'
-const email = 'prueba@prueba.com';
-const password = '12345';
-
-before(async () => {
-  await models.User.create({
-    name,
-    email,
-    password
-  })
+//Testing GET endpoint
+describe('Get all the providers data', () => {
+  it('should return an array of objects', (done) => {
+    chai.request(server)
+      .get('/providers/')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
+        done();
+      });
+  });
 });
-after(async () => {
-  await models.User.destroy({
-    where: {
-      email
+//Testing POST endpoint
+describe('Save in the db', () => {
+  it('should return an object with the data that was stored in the db', (done) => {
+    let newProvider = {
+      firstName: "Jaime",
+      lastName: "Velez",
+      middleName: "D.",
+      email: "jandres.vr@hotmail.com"
     }
-  })
+    chai.request(server)
+      .post('/providers/')
+      .send(newProvider)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+});
+//Testing PUT endpoint
+describe('Update a row in the db by a field(email)', () => {
+  it('should return an object that was updated in the db', (done) => {
+    let updateProvider = {
+      updateBy: {
+        email: "jandres.vr@hotmail.com"
+      },
+      firstName: "Andres",
+      lastName: "Rojas",
+      middleName: "F.",
+      email: "jandres.vr@hotmail.com"
+    }
+    chai.request(server)
+      .put('/providers/')
+      .send(updateProvider)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
+});
+//Testing DELETE endpoint
+describe('Delete a row in the db', () => {
+  it('should return the object that was deleted in the db by a field(email)', (done) => {
+    let deleteProvider = {
+      deleteBy: {
+        email: "jandres.vr@hotmail.com"
+      }
+    }
+    chai.request(server)
+      .delete('/providers/')
+      .send(deleteProvider)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        done();
+      });
+  });
 });
