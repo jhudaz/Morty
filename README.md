@@ -40,9 +40,12 @@ Development environment
 $ npm start
 ```
 ### Notes
-The server is running in the port 7000 
+The server is running in the port 4000 by default, but if you want to run the server in another port you can use the next command: 
+```sh
+PORT=7000 npm start
+```
 ### Endpoints
-Open postman to use the API endpoint: `localhost:7000/providers/` to use the next methods:
+Open postman to use the API endpoint with the port that you have choose, that in this case is the 7000: `localhost:7000/providers/` 
 
 #### Get 
 In postman, we select the method `GET` in the select, and click on the `Send` button like the next image: 
@@ -51,14 +54,27 @@ And the response will be an array of objects  with all the collection data, that
 ![get-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/GET-RESPONSE.png)
 
 #### Post 
-In postman, we select the method `POST` in the select, click on `Body` option in the menu  and select the `raw` in the under menu, with the format `JSON`, and  click on the `Send` button  with an JSON object like the next image:
+We select the method `POST` in the select, click on `Body` option in the menu  and select the `raw` in the under menu, with the format `JSON`, and  click on the `Send` button  with an JSON object like the next image:
 ![post](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/POST-METHOD.png)
+The response will be an object with the data sended
+![post-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/POST-RESPONSE.png)
 
 #### Update 
+We select the method `PUT` in the select, click on `Body` option in the menu  and select the `raw` in the under menu, with the format `JSON`, and  click on the `Send` button  with an JSON object like the next image:
+#### Note:
+We can update by any field specified in the `updatedBy`, in the example i used `email`, but you can choose any   that there is in the model:
 ![put](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/PUT-METHOD.png)
+The response will be the object that was modified 
+![put-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/PUT-RESPONSE.png)
 
 #### Delete 
+We select the method `DELETE` in the select, click on `Body` option in the menu  and select the `raw` in the under menu, with the format `JSON`, and  click on the `Send` button  with an JSON object like the next image:
+#### Note:
+Like  in the update  example  we can delete by any field specified  in `deleteBy`, but you can choose any one, that is specified in the model:
+
 ![delete](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/DELETE-METHOD.png)
+the response will be the data  that was deleted
+![delete-response](https://raw.githubusercontent.com/jhudaz/Morty/master/resources/images/DELETE-RESPONSE.png)
 
 
 License
