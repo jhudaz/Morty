@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://jvelez:jvelez1@ds155634.mlab.com:55634/evercheck-test-9');
+mongoose.connect(process.env.MONGO_URL);
 const schema = mongoose.Schema;
 
 //collection schema
